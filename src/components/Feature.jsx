@@ -92,8 +92,8 @@ function FeatureCard({ title, desc, icon, featured }) {
         hovered ? "-translate-y-1.5" : "translate-y-0",
         hovered
           ? featured
-            ? "shadow-[0_20px_50px_rgba(108,47,255,0.4)]"
-            : "shadow-[0_20px_50px_rgba(0,0,0,0.4),0_0_30px_rgba(124,77,255,0.08)]"
+            ? "shadow-purple-500/40 shadow-2xl"
+            : "shadow-purple-500/40 shadow-2xl"
           : "shadow-none",
       ].join(" ")}
     >

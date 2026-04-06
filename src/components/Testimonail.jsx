@@ -55,9 +55,9 @@ function TestimonialCard({ text, name, role, avatar, featured }) {
       className={[
         "relative rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 group",
         featured
-          ? "bg-[#13162a] border border-purple-500/40 shadow-[0_0_40px_rgba(124,77,255,0.12)]"
+          ? "bg-[#13162a] border border-purple-500/40 shadow-[400px_400px_200px_rgba(124,77,255,0.12)]"
           : "bg-[#13162a] border border-white/[0.06]",
-        "hover:-translate-y-1.5 hover:border-purple-500/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]",
+        "hover:-translate-y-1.5 hover:border-purple-500/40 hover:shadow-purple-500/40 shadow-2xl",
       ].join(" ")}
     >
       {/* Subtle glow overlay */}

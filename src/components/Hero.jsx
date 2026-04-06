@@ -13,7 +13,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── HERO TEXT ── */}
-      <div className="relative z-10 flex flex-col items-center text-center pt-24 px-4">
+      <div className="relative z-10 flex flex-col items-center text-center pt-24 px-4 w-full">
 
         {/* Heading */}
         <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-5">
@@ -31,18 +31,23 @@ export default function HeroSection() {
             Try Free Trial
           </button>
           <button className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/15 bg-white/[0.04] text-white/80 text-sm font-medium hover:bg-white/[0.08] hover:border-white/25 transition-all duration-200">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
             Schedule a Demo
           </button>
         </div>
 
         {/* ── DASHBOARD IMAGE ── */}
-        <div className="relative  max-w-4xl mx-auto w-3xl">
+        <div className="relative max-w-6xl mx-auto w-full px-4">
 
           {/* Floating left card */}
           <div className="absolute -left-4 top-10 z-20 bg-[#181929] border border-white/10 rounded-2xl p-4 w-36 shadow-2xl hidden lg:block">
             <div className="w-8 h-8 rounded-xl bg-[#7c6eff]/20 flex items-center justify-center mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c6eff" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c6eff" strokeWidth="2">
+                <rect x="3" y="11" width="18" height="11" rx="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
             </div>
             <p className="text-white text-sm font-bold leading-tight">Secured</p>
             <p className="text-white/40 text-[10px] mt-0.5">100% Data</p>
@@ -52,7 +57,10 @@ export default function HeroSection() {
           <div className="absolute -right-4 bottom-20 z-20 bg-white rounded-2xl p-3.5 shadow-2xl hidden lg:block">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-xl bg-[#7c6eff]/15 flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c6eff" strokeWidth="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c6eff" strokeWidth="2.5">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                  <polyline points="16 7 22 7 22 13"/>
+                </svg>
               </div>
               <div>
                 <p className="text-[#0d0e1a] text-sm font-black">500% Visits</p>
@@ -64,9 +72,9 @@ export default function HeroSection() {
           {/* Dashboard Image */}
           <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyoKeykYSeo8rrf4_8RaJRI-EKwfyRUe1nCA&s"
+              src="https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2hpdGUlMjBkYXRhJTIwZGFzaGJvYXJkfGVufDB8MHwwfHx8MA%3D%3D"
               alt="Dashboard"
-              className="w-full h-auto object-cover block"
+              className="w-full h-[500px] object-cover block"
             />
             {/* Bottom gradient fade */}
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0d0e1a] to-transparent pointer-events-none"/>
