@@ -63,6 +63,9 @@ export default function Footer() {
               Start free, upgrade anytime. No credit card required.
             </p>
           </div>
+
+
+          
           <div className="flex items-center gap-3 shrink-0">
             <button className="px-5 py-2.5 rounded-full bg-[#7c6eff] text-white text-sm
               font-semibold hover:bg-[#6b5ce7] hover:-translate-y-0.5
@@ -77,6 +80,28 @@ export default function Footer() {
             </button>
           </div>
         </div>
+
+
+
+        {/* ── Stats bar ── */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6
+          border-t border-b border-white/[0.06]">
+          {[
+{ to: 99.99, suffix: "%", label: "Uptime SLA" },
+{ to: 83,    suffix: "K+", label: "Companies" },
+{ to: 140,   suffix: "+",  label: "Countries" },
+{ to: 500,   suffix: "M",  label: "Ecosystem Value" },
+          ].map(stat => (
+            <div key={stat.label} className="text-center">
+<p className="text-white font-black text-xl sm:text-2xl flex items-center justify-center gap-0.5">
+  <CountUp from={0} to={stat.to} duration={2} direction="up" />
+  <span>{stat.suffix}</span>
+</p>
+              <p className="text-white/35 text-xs mt-0.5">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
 
         {/* ── Main Footer Grid ── */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5
@@ -139,25 +164,6 @@ export default function Footer() {
 
 
 
-
-        {/* ── Stats bar ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6
-          border-t border-b border-white/[0.06]">
-          {[
-{ to: 99.99, suffix: "%", label: "Uptime SLA" },
-{ to: 83,    suffix: "K+", label: "Companies" },
-{ to: 140,   suffix: "+",  label: "Countries" },
-{ to: 500,   suffix: "M",  label: "Ecosystem Value" },
-          ].map(stat => (
-            <div key={stat.label} className="text-center">
-<p className="text-white font-black text-xl sm:text-2xl flex items-center justify-center gap-0.5">
-  <CountUp from={0} to={stat.to} duration={2} direction="up" />
-  <span>{stat.suffix}</span>
-</p>
-              <p className="text-white/35 text-xs mt-0.5">{stat.label}</p>
-            </div>
-          ))}
-        </div>
 
 
 {/* import CountUp from './CountUp' */}

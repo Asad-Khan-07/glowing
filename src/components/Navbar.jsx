@@ -34,8 +34,8 @@ export default function WeServeNavbar() {
       <nav
         className={`w-screen fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 h-[68px] transition-all duration-300 backdrop-blur-xl border-b
           ${scrolled
-            ? "bg-[#0b0c10] border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.4)]"
-            : "bg-[#0b0c10] border-white/5"
+            ? "bg-transparent border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.4)]"
+            : "bg-transparent border-white/5"
           }`}
       >
         {/* Logo */}
