@@ -139,6 +139,37 @@ void main(){
   o=tanh4(o*o*(uGlow*uBloom)/1e5);
   vec3 col=clamp(o.rgb,0.0,1.0);
 
+  // CUSTOM COLOR: #7c6eff (RGB: 124, 110, 255)
+  // Converted to normalized RGB: (0.486, 0.431, 1.0)
+  vec3 baseColor = vec3(0.486, 0.431, 1.0);
+  
+  // Create variations for depth and neon effect
+  vec3 darkColor = vec3(0.3, 0.25, 0.8);    // Darker shade
+  vec3 lightColor = vec3(0.7, 0.65, 1.0);   // Lighter/brighter shade
+  vec3 neonColor = vec3(0.55, 0.5, 1.0);    // Neon variant
+  
+  // Mix colors based on intensity for dynamic range
+  float intensity = (col.r + col.g + col.b) / 3.0;
+  float variation = sin(p.y * 8.0 + iTime * 5.0) * 0.3 + 0.5;
+  
+  // Apply the #7c6eff color scheme with neon variations
+  col = mix(darkColor, baseColor, intensity);
+  col = mix(col, lightColor, sin(intensity * 3.14159) * 0.6);
+  col = mix(col, neonColor, variation * 0.4);
+  
+  // Add vibrant neon highlights
+  float highlight = pow(intensity, 2.0) * 0.6;
+  col += baseColor * highlight;
+  
+  // Ensure the core color maintains the #7c6eff hue
+  col = mix(col, baseColor, 0.3);
+  
+  // Clamp values
+  col = clamp(col, 0.0, 1.0);
+  
+  // Slight gamma correction for punchier neon look
+  col = pow(col, vec3(0.85));
+
   if(uNoise>0.001){
     float n=rand(gl_FragCoord.xy+vec2(iTime));
     col+=((n-0.5)*uNoise);
@@ -152,7 +183,9 @@ void main(){
     col=clamp(hueRot(uHue)*col,0.0,1.0);
   }
 
-  gl_FragColor=vec4(col,o.a);
+  // Enhanced alpha for neon glow effect
+  float alphaBoost = clamp(intensity * 1.5, 0.3, 1.0);
+  gl_FragColor=vec4(col, o.a * alphaBoost);
 }`;
 
     // ── Compile & link ────────────────────────────────────────────
