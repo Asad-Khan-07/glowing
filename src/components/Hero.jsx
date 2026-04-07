@@ -1,13 +1,29 @@
-import { useState } from "react";
+import dashboard from "../assets/dashboard.jpg";
+import Prism from "./Prism";
 
 const logos = ["Logoipsum", "logoipsum", "Logoipsum", "Logoipsum", "Logoipsum"];
 
 export default function HeroSection() {
   return (
-    <div className="min-h-screen bg-[#0d0e1a] flex flex-col items-center overflow-hidden">
+    <div className="min-h-screen bg-[#0d0e1a] flex flex-col items-center overflow-hidden relative">
+
+      {/* ── PRISM BACKGROUND ── */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Prism
+          animationType="rotate"
+          timeScale={0.5}
+          height={3.5}
+          baseWidth={5.5}
+          scale={3.6}
+          hueShift={0}
+          colorFrequency={1}
+          noise={0}
+          glow={1}
+        />
+      </div>
 
       {/* Radial glow bg */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-[1]">
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#7c6eff]/10 rounded-full blur-[120px]"/>
         <div className="absolute top-[30%] right-[-5%] w-[300px] h-[300px] bg-[#6366f1]/10 rounded-full blur-[80px]"/>
       </div>
@@ -72,7 +88,7 @@ export default function HeroSection() {
           {/* Dashboard Image */}
           <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
             <img
-              src="https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2hpdGUlMjBkYXRhJTIwZGFzaGJvYXJkfGVufDB8MHwwfHx8MA%3D%3D"
+              src={dashboard}
               alt="Dashboard"
               className="w-full h-[500px] object-cover block"
             />

@@ -8,6 +8,7 @@ import HeroSection from './components/Hero'
 import FeaturesSection from './components/Feature'
 import Product from './components/Product'
 import Testimonials from './components/Testimonail'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
 <FeaturesSection/>
 <Product/>
 <Testimonials/>
+<Footer/>
     </>
   )
 }
